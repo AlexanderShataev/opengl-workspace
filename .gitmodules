@@ -1,0 +1,3 @@
+[submodule "1-window/vendor"]
+	path = textures-lab/vendor
+	url = /home/alexander/EduProjects/Cpp/OpenGl/myexamples/1-window/vendor
