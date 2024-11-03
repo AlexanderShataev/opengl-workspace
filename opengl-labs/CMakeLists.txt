@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)   # Selects the minimum version of CMake required to run this file
-project(GL_LAB_1 VERSION 0.0.1)          # Here we select the project name and version
+project(GL_LABS VERSION 0.0.1)          # Here we select the project name and version
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -22,16 +22,17 @@ include_directories(
         vendor/glm
         vendor/imgui
         vendor/utils
+        library/
 )
 
 
+set(GL_LAB_LIBRARY
+    library/shader.h
+    library/shader.cpp
+    library/sb_image_imp.cpp
+)
 
-set(GL_LAB_SOURCE
-    src/main.cpp
-    src/shader.h src/shader.cpp
-    src/sb_image_imp.cpp
-    )
 
+add_executable(GL_LAB1_TEXTURES ${GL_LAB_LIBRARY} ${VENDOR_SOURCES} labs/l1-textures/l1_textures.cpp)
+target_link_libraries(GL_LAB1_TEXTURES glfw)
 
-add_executable(L01_EMPTY_WINDOW ${GL_LAB_SOURCE} ${VENDOR_SOURCES})
-target_link_libraries(L01_EMPTY_WINDOW glfw)
