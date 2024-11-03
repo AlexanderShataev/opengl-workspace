@@ -113,4 +113,9 @@ std::optional<int> Shader::compileVertexShader(const char *shaderProgram) {
 
     }
     return fragmentShader;
-}
+ }
+
+ std::optional<unsigned int> Shader::getShaderId() const
+ {
+     return shaderId;
+ }
