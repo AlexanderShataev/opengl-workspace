@@ -28,6 +28,7 @@ public:
     void setIntUniform(const std::string& name, int value);
     void setFloatUniform(const std::string& name, float value);
 
+    std::optional<unsigned int> getShaderId() const;
 
 private:
     std::optional<int> compileVertexShader(const char* shaderProgram);
