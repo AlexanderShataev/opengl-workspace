@@ -195,13 +195,14 @@ int main()
         float timeValue = glfwGetTime();
         float greenValueX = sin(timeValue) / 2.0f;// + 0.5f;
         float greenValueY = sin(timeValue) / 2.0f;// + 0.5f;
-        auto value = sin(timeValue) / 2.0f;
+        float value = sin(timeValue) / 2.0f;
         shader.setFloatUniform("offset_x", greenValueX);
         shader.setFloatUniform("offset_y", greenValueY);
 
         glm::mat4 trans = glm::mat4(1.0f);
-        trans = glm::rotate(trans, glm::radians(90.0f * value), glm::vec3(1.0, 1.0, 1.0));
-        trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
+        trans = glm::rotate(trans, timeValue, glm::vec3(1.0f, 1.0f, 1.0f));
+        trans = glm::scale(trans, glm::vec3(0.5f, 0.5f, 0.5f));
+        trans = glm::translate(trans, glm::vec3(sin(timeValue), sin(timeValue), sin(timeValue)));
         unsigned int transformLoc = glGetUniformLocation(*shader.getShaderId(), "transform");
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
