@@ -36,3 +36,6 @@ set(GL_LAB_LIBRARY
 add_executable(GL_LAB1_TEXTURES ${GL_LAB_LIBRARY} ${VENDOR_SOURCES} labs/l1-textures/l1_textures.cpp)
 target_link_libraries(GL_LAB1_TEXTURES glfw)
 
+add_executable(GL_LAB2_TRANSFORMATION ${GL_LAB_LIBRARY} ${VENDOR_SOURCES} labs/l2-transformation/l2_transformation.cpp)
+target_link_libraries(GL_LAB2_TRANSFORMATION glfw)
+
