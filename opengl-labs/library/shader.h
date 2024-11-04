@@ -28,6 +28,15 @@ public:
     void setIntUniform(const std::string& name, int value);
     void setFloatUniform(const std::string& name, float value);
 
+    template <typename T>
+    void setMatrix4fvUniform(const std::string& name, T&& value)
+    {
+        int loc = glGetUniformLocation(getShaderId().value(), name.c_str());
+        glUniformMatrix4fv(loc, 1, GL_FALSE, std::forward<T>(value));
+
+    }
+
+
     std::optional<unsigned int> getShaderId() const;
 
 private:

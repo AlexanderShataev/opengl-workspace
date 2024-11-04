@@ -30,6 +30,7 @@ set(GL_LAB_LIBRARY
     library/shader.h
     library/shader.cpp
     library/sb_image_imp.cpp
+    library/camera.h library/camera.cpp
 )
 
 
@@ -38,4 +39,9 @@ target_link_libraries(GL_LAB1_TEXTURES glfw)
 
 add_executable(GL_LAB2_TRANSFORMATION ${GL_LAB_LIBRARY} ${VENDOR_SOURCES} labs/l2-transformation/l2_transformation.cpp)
 target_link_libraries(GL_LAB2_TRANSFORMATION glfw)
+
+add_executable(GL_LAB3_3D ${GL_LAB_LIBRARY} ${VENDOR_SOURCES} labs/l3-3d/l3_3d.cpp)
+target_link_libraries(GL_LAB3_3D glfw)
+
+
 

@@ -84,6 +84,8 @@ void Shader::setFloatUniform(const std::string &name, float value)
     glUniform1f(glGetUniformLocation(*shaderId, name.c_str()), value);
 }
 
+
+
 std::optional<int> Shader::compileVertexShader(const char *shaderProgram) {
     int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &shaderProgram, NULL);
